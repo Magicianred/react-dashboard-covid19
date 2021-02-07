@@ -1,9 +1,10 @@
 import uniq from 'lodash/uniq';
+import orderBy from 'lodash/orderBy';
 import isArray from 'lodash/isArray';
 import { toPresentationData } from './../transformations/contagi';
 
 //array al contrario
-export const sortedArray = (dati) => [...dati].reverse();
+export const sortedArray = (dati) => orderBy([...dati], ['data'], ['desc']);
 
 //formatto i dati per una maggiore chiarezza
 export const formatNumber = (num) => new Intl.NumberFormat('it-IT').format(num);
